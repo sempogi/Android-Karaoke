@@ -10,7 +10,23 @@ The project grew from years of experimentation with karaoke systems across VB6, 
 > Functionality, playback reliability, and architectural validation come before cosmetic enhancement.
 
 ---
+<h2>Download</h2>
 
+<p>
+  Prebuilt KaraokeHD Player and Controller packages, test releases, and related files are available from the official project folder:
+</p>
+
+<p>
+  <a href="https://drive.google.com/drive/folders/1uzKgq8kEgkySe327vFV9i20q6Q9_ZzFi?usp=sharing"
+     target="_blank"
+     rel="noopener noreferrer">
+    Download KaraokeHD from Google Drive
+  </a>
+</p>
+
+<blockquote>
+  Packages in the download folder may include experimental and device-testing builds. Preserve your current validated APK and source package before installing a newer gate.
+</blockquote>
 ## Main Components
 
 ### KaraokeHD Player
