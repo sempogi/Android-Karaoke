@@ -10,23 +10,30 @@ The project grew from years of experimentation with karaoke systems across VB6, 
 > Functionality, playback reliability, and architectural validation come before cosmetic enhancement.
 
 ---
-<h2>Download</h2>
 
-<p>
-  Prebuilt KaraokeHD Player and Controller packages, test releases, and related files are available from the official project folder:
-</p>
+## Download
 
-<p>
-  <a href="https://drive.google.com/drive/folders/1uzKgq8kEgkySe327vFV9i20q6Q9_ZzFi?usp=sharing"
-     target="_blank"
-     rel="noopener noreferrer">
-    Download KaraokeHD from Google Drive
-  </a>
-</p>
+Prebuilt KaraokeHD Player and Controller packages, test releases, and related project files are available from the official project folder:
 
-<blockquote>
-  Packages in the download folder may include experimental and device-testing builds. Preserve your current validated APK and source package before installing a newer gate.
-</blockquote>
+### [Download KaraokeHD from Google Drive](https://drive.google.com/drive/folders/1uzKgq8kEgkySe327vFV9i20q6Q9_ZzFi?usp=sharing)
+
+> Packages in the download folder may include experimental and device-testing builds. Preserve your current validated APK and source package before installing or testing a newer gate.
+
+### Important Download Notice
+
+KaraokeHD packages do **not** include:
+
+- SoundFont `.sf2` audio files
+- Commercial MIDI or KAR song collections
+- Copyrighted karaoke lyrics
+- Licensed background music
+- Copyrighted photographs or videos
+- Third-party media libraries
+
+Users must provide their own legally obtained SoundFont and media files.
+
+---
+
 ## Main Components
 
 ### KaraokeHD Player
@@ -79,19 +86,19 @@ It provides:
 
 ### MIDI/KAR Playback
 
-KaraokeHD uses an SF2 SoundFont and the MeltySynth audio engine to render MIDI and KAR files directly on Android.
+KaraokeHD uses a user-supplied SF2 SoundFont and the MeltySynth audio engine to render MIDI and KAR files directly on Android.
 
 Playback capabilities include:
 
 - Local MIDI/KAR loading
 - Minimized and background playback
-- Accurate playback position tracking
+- Accurate playback-position tracking
 - Pause, resume, stop, and seek
 - Automatic transition to the next queued song
 - Persistent foreground playback notification
 - Android AudioTrack output
 - 48 kHz audio rendering
-- Configurable SF2 selection
+- Configurable local SF2 selection
 
 ---
 
@@ -173,7 +180,7 @@ The automatic mode is intended for convenient karaoke playback, while manual mod
 
 KaraokeHD follows the established General MIDI convention that uses Channel 10 for percussion.
 
-The underlying MIDI protocol can technically route many types of musical data through any channel, but the General MIDI convention provides predictable playback across compatible MIDI files, synthesizers, and SoundFonts.
+The underlying MIDI protocol can technically route different kinds of musical data through any channel, but the General MIDI convention provides predictable percussion playback across compatible MIDI files, synthesizers, and SoundFonts.
 
 Experimental cross-channel melodic and percussion reassignment may be explored separately in a future mixer gate.
 
@@ -183,7 +190,7 @@ Experimental cross-channel melodic and percussion reassignment may be explored s
 
 The Controller includes an integrated workspace for repairing MIDI/KAR lyrics without manually transferring files between devices.
 
-The workflow is:
+The normal editor workflow is:
 
 1. Search for a song in the Controller catalog.
 2. Open the song in the KAR Editor.
@@ -228,6 +235,8 @@ The replacement process verifies:
 
 The Player creates a backup before replacement and retains rollback protection if validation or file commitment fails.
 
+Editing or replacing a file through KaraokeHD does not alter the copyright ownership or licensing requirements of that file.
+
 ---
 
 ## Song Catalog
@@ -270,6 +279,8 @@ Current remote media capabilities include:
 - Front-camera preview
 - Background transition selection
 - Remote dimmer control
+
+Users are responsible for ensuring that uploaded and displayed media may legally be used on their devices.
 
 ---
 
@@ -322,7 +333,17 @@ This gate preserves:
 - Target: Android ARM64
 - Framework: `.NET MAUI`
 
-This Controller build includes the integrated MIDI/KAR Lyrics Editor, persistent workspaces, local playback preview, timing repair, Player download, validated saving, and protected upload back to the Player.
+This Controller build includes:
+
+- Integrated MIDI/KAR Lyrics Editor
+- Persistent editing workspaces
+- Local SoundFont playback preview
+- Lyric text and marker repair
+- Per-token timing adjustment
+- Player song download
+- Validated repaired-file saving
+- Round-trip validation
+- Protected upload back to the Player
 
 ---
 
@@ -331,8 +352,192 @@ This Controller build includes the integrated MIDI/KAR Lyrics Editor, persistent
 ### Requirements
 
 - Windows
-- .NET SDK with Android workload
+- .NET SDK with the Android workload
 - Android SDK
 - Android ARM64 device or compatible test environment
-- A valid SF2 SoundFont
+- A user-supplied and legally obtained SF2 SoundFont
 
+### SoundFont Requirement
+
+KaraokeHD requires a compatible `.sf2` SoundFont for MIDI/KAR audio rendering.
+
+**No SoundFont audio files are included, hosted, mirrored, or distributed with KaraokeHD.**
+
+SoundFont files may contain:
+
+- Recorded instrument samples
+- Synthesized audio material
+- Preset definitions
+- Proprietary instrument libraries
+- Other copyrighted or licensed content
+
+To avoid unauthorized redistribution, KaraokeHD does not provide third-party SoundFont files.
+
+Users must:
+
+1. Obtain an SF2 SoundFont from a legitimate source.
+2. Review and follow the SoundFont's license.
+3. Confirm that they are permitted to use it on their device.
+4. Avoid redistributing it unless its license explicitly permits redistribution.
+5. Select or place the SoundFont using the Player's supported local SoundFont workflow.
+
+KaraokeHD supports standard SF2 files containing uncompressed 16-bit PCM samples.
+
+SF3 and other compressed SoundFont formats are not currently supported.
+
+
+```
+
+The generated APK will be copied beside the build script using the release-specific filename.
+
+---
+
+## Project Philosophy
+
+KaraokeHD follows several practical development principles:
+
+- Functionality before decoration
+- Device testing before feature expansion
+- Proof-of-concept validation before architectural escalation
+- Protected stable rollback gates
+- Local-first operation
+- Dedicated remote control
+- Controlled file replacement
+- Preservation of existing working behavior
+- New features should solve observed usage problems
+
+The project intentionally remains experimental and evolves through gated, device-tested builds.
+
+---
+
+## Project History
+
+KaraokeHD is the latest stage of a long-running personal karaoke experiment.
+
+Earlier implementations and experiments included:
+
+- VB6 karaoke development beginning around 2004
+- PSP and TiMidity experiments
+- Java phone playback
+- Symbian implementations
+- Python terminal karaoke under Termux
+- Portable monolithic HTML karaoke
+- PHP server-based karaoke
+- Browser-based audio engines and lyric parsers
+- Modern Android Player and Controller applications
+
+Some earlier HTML and PHP experiments were published under aliases and project identities associated with:
+
+- `sempogi`
+- `noobdou`
+- `codex45`
+- `doggy`
+- `axlrose`
+- `spartacute`
+- `spartacus`
+- `kentoterror`
+
+These names belong to the same long-running body of experimental work.
+
+---
+
+## Media and Copyright Disclaimer
+
+KaraokeHD is a software player, controller, editor, and interoperability-testing project.
+
+It does not grant users ownership of, or redistribution rights to, any third-party media opened, played, edited, uploaded, downloaded, replaced, or managed through the application.
+
+The project does not provide or distribute:
+
+- SoundFont or SF2 audio libraries
+- MIDI or KAR song collections
+- Copyrighted karaoke lyrics
+- Commercial karaoke tracks
+- Background music
+- Copyrighted photographs or videos
+- Third-party media packages
+
+Users are solely responsible for ensuring that their MIDI, KAR, SF2, lyric, image, video, and other media files are legally obtained and used according to their applicable licenses, permissions, and local laws.
+
+Editing, repairing, converting, downloading, uploading, or replacing a file through KaraokeHD does not change:
+
+- Ownership of the file
+- Copyright status of the file
+- Licensing requirements
+- Redistribution restrictions
+- Attribution requirements
+
+Project contributors are not responsible for media supplied, uploaded, modified, shared, or redistributed by individual users.
+
+---
+
+## Software Disclaimer
+
+KaraokeHD is an experimental laboratory project provided for:
+
+- Software development
+- Interoperability testing
+- Personal experimentation
+- MIDI/KAR research
+- Legitimate karaoke use
+
+The software is provided **as is**, without warranties or guarantees regarding:
+
+- Compatibility with every Android device
+- Compatibility with every MIDI, KAR, or SF2 file
+- Playback accuracy with every SoundFont
+- Availability of every experimental feature
+- Preservation of user-supplied files
+- Suitability for commercial or production use
+- Continued compatibility between experimental gates
+
+Users should preserve backups of:
+
+- Their current validated APK
+- Source packages
+- SQLite song catalogs
+- MIDI and KAR files
+- Editing workspaces
+- Configuration files
+- Channel and mixer settings
+- Any media managed by the application
+
+New gates may contain experimental changes and should be tested before replacing a validated installation.
+
+---
+
+## Third-Party Components
+
+KaraokeHD may use open-source libraries and platform components.
+
+Each third-party component remains subject to its own:
+
+- License
+- Attribution requirements
+- Usage conditions
+- Modification terms
+- Distribution terms
+
+Compatibility with a file format, library, engine, SoundFont, or external tool does not imply ownership, endorsement, sponsorship, or authorization to redistribute third-party content created for that format or tool.
+
+---
+
+## Development Status
+
+KaraokeHD is actively developed and tested as a laboratory platform.
+
+Features may be:
+
+- Experimental
+- Device-specific
+- Revised between gates
+- Protected behind rollback versions
+- Promoted only after successful device validation
+
+Always preserve a currently validated gate before installing a newer experimental build.
+
+---
+
+## Suggested GitHub Topics
+
+`dotnet-maui` `android` `midi` `kar` `karaoke` `soundfont` `sf2` `meltysynth` `lyrics` `remote-control` `music-player`
