@@ -536,8 +536,3 @@ Features may be:
 
 Always preserve a currently validated gate before installing a newer experimental build.
 
----
-
-## Suggested GitHub Topics
-
-`dotnet-maui` `android` `midi` `kar` `karaoke` `soundfont` `sf2` `meltysynth` `lyrics` `remote-control` `music-player`
