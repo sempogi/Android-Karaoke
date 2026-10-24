@@ -1,109 +1,322 @@
-KaraokeHD 
+# KaraokeHD
 
-GitHub Description and Release Notes 
+**KaraokeHD is an experimental Android MIDI/KAR karaoke platform built with .NET MAUI.**
 
-Player Gate 3.8.19P.2.3  |  Version 0.3.8.25.5  |  Build 38275 
+It combines a dedicated **Player** with a separate **Controller companion**, providing SoundFont playback, synchronized karaoke lyrics, local song catalog management, queue control, channel mixing, remote media management, and protected MIDI/KAR lyric repair.
 
-GitHub Repository Description 
+The project grew from years of experimentation with karaoke systems across VB6, PSP/TiMidity, Java phones, Symbian, Python terminal playback, portable HTML players, PHP-based karaoke servers, and modern Android development.
 
-Option 1: Clear and technical 
+> KaraokeHD is developed as a laboratory project.  
+> Functionality, playback reliability, and architectural validation come before cosmetic enhancement.
 
-Android .NET MAUI MIDI/KAR karaoke system with SoundFont playback, synchronized lyrics, remote control, channel mixing, local catalog management, and protected KAR editing and replacement. 
+---
 
-Option 2: Product-focused 
+## Main Components
 
-KaraokeHD is a self-contained Android MIDI/KAR karaoke platform with a dedicated Controller companion, SF2 audio, synchronized lyrics, queue control, channel mixing, and remote song repair. 
+### KaraokeHD Player
 
-Option 3: Short GitHub About text 
+The Player is the main Android karaoke engine.
 
-Android MIDI/KAR karaoke player and remote controller with SF2 playback, synchronized lyrics, channel mixing, and KAR editing. 
+It handles:
 
-Suggested GitHub Topics 
+- MIDI and KAR playback
+- SoundFont-based audio rendering
+- Synchronized karaoke lyrics
+- Word-level lyric highlighting
+- Song queue management
+- Automatic queue progression
+- Local SQLite song catalog
+- Background images and decorative video
+- Channel mute, solo, and instrument control
+- Seven-band master equalizer
+- Karaoke guide-channel detection
+- Remote commands from the Controller
+- Protected song upload and replacement
+- Camera and photo backgrounds
+- Idle song-list presentation
 
-dotnet-maui  android  midi  kar  karaoke  soundfont  sf2  meltysynth  lyrics  remote-control  music-player 
+### KaraokeHD Controller
 
-Release Title 
+The Controller is the dedicated remote companion and the primary control surface for KaraokeHD.
 
-KaraokeHD Player Gate 3.8.19P.2.3 - Dynamic SF2 Drum Kit Inventory 
+It provides:
 
-Release Notes 
+- Automatic Player discovery
+- Manual Player address configuration
+- Local catalog synchronization
+- Fast SQLite-backed song search
+- Numeric song selection
+- Remote play, pause, stop, and queue control
+- Queue clearing and Auto Queue control
+- Remote channel cards
+- Channel mute controls
+- Lyric-color selection
+- Background dimmer control
+- Photo upload
+- Camera background streaming
+- MIDI/KAR upload
+- Integrated MIDI/KAR Lyrics Editor
 
-This gate improves manual Channel 10 drum-kit selection while preserving KaraokeHD’s simple automatic percussion behavior. The mixer now reads the active SoundFont and presents the drum presets that are genuinely available instead of limiting manual selection to a fixed three-kit list. 
+---
 
-What’s New 
+## Core Features
 
-Manual Channel 10 assignment now discovers percussion presets directly from bank 128 of the active SF2. 
+### MIDI/KAR Playback
 
-Displays each detected drum kit using its actual SoundFont preset name and program number. 
+KaraokeHD uses an SF2 SoundFont and the MeltySynth audio engine to render MIDI and KAR files directly on Android.
 
-Supports Standard, Room, Power, Electronic, TR-808, Jazz, Brush, Orchestra, SFX, and custom kits when they exist in the loaded SoundFont. 
+Playback capabilities include:
 
-Removes the previous hard-coded manual list containing only Power, Jazz, and Standard drum kits. 
+- Local MIDI/KAR loading
+- Minimized and background playback
+- Accurate playback position tracking
+- Pause, resume, stop, and seek
+- Automatic transition to the next queued song
+- Persistent foreground playback notification
+- Android AudioTrack output
+- 48 kHz audio rendering
+- Configurable SF2 selection
 
-Keeps the convenient DEFAULT AUTO behavior using the existing Power → Jazz → Standard availability order. 
+---
 
-Preserves per-song manual instrument assignments through the existing assignment pipeline. 
+### Synchronized Karaoke Lyrics
 
-Preserved Behavior 
+The Player reads lyric and text events embedded in MIDI/KAR files.
 
-MIDI/KAR playback and lyric timing 
+Supported presentation behavior includes:
 
-Queue and background playback behavior 
+- Uppercase lyric display
+- Progressive word highlighting
+- Line and screen-break markers
+- Instrumental and interlude banners
+- Countdown before the first lyric
+- Configurable lyric fill colors
+- Remote lyric-color control
+- Guide-channel detection and mute support
 
-Channel mute, solo, and melodic instrument selection 
+---
 
-Seven-band master EQ and Karaoke Mode 
+### SoundFont Channel Mixer
 
-Remote Controller channel-state synchronization 
+KaraokeHD includes a Channel Strip Mixer for inspecting and controlling active MIDI channels.
 
-Protected KAR download, editing, validation, replacement, backup, and rollback 
+Each channel can display:
 
-SQLite catalog and existing Player/Controller workflows 
+- Channel number
+- Detected instrument
+- Manual instrument assignment
+- Guide-channel confidence
+- Mute state
+- Solo state
+- Percussion state
 
-Technical Details 
+Mixer functions include:
 
-Gate 
+- Persistent channel mute
+- Channel solo
+- Manual melodic instrument assignment
+- Per-song instrument overrides
+- Karaoke Mode
+- Seven-band master EQ
+- Remote channel-state reporting
 
-3.8.19P.2.3 
+---
 
-Display version 
+## Dynamic SF2 Drum Kit Inventory
 
-0.3.8.25.5 
+Starting with **Player Gate 3.8.19P.2.3**, manual Channel 10 selection is no longer limited to a hard-coded list of three drum kits.
 
-Android build 
+The Player now inspects the active SoundFont and lists the percussion presets actually available in **SF2 bank 128**.
 
-38275 
+Depending on the loaded SoundFont, the available list may include:
 
-Platform 
+- Standard Drum Kit
+- Room Drum Kit
+- Power Drum Kit
+- Electronic Drum Kit
+- TR-808 Drum Kit
+- Jazz Drum Kit
+- Brush Drum Kit
+- Orchestra Drum Kit
+- SFX Drum Kit
+- Custom SoundFont drum kits
 
-.NET MAUI / Android ARM64 
+Each detected kit is displayed using its actual preset name and program number.
 
-Audio engine 
+### Automatic Drum Selection
 
-MeltySynth 2.4.1 with SF2 playback 
+For simple operation, KaraokeHD retains its automatic fallback order:
 
-Source package 
+1. Power Drum Kit
+2. Jazz Drum Kit
+3. Standard Drum Kit
 
-KaraokeHD-Player-Gate-3.8.19P.2.3-SF2-Drum-Kit-Inventory.utf8 
+The automatic mode is intended for convenient karaoke playback, while manual mode exposes the complete drum-kit inventory of the active SoundFont.
 
-SHA-256 
+### General MIDI Compatibility
 
-d6e3681e30f6978326f573650616684683934fa1e412022fbc00583a3e67c4d0 
+KaraokeHD follows the established General MIDI convention that uses Channel 10 for percussion.
 
-Testing Focus 
+The underlying MIDI protocol can technically route many types of musical data through any channel, but the General MIDI convention provides predictable playback across compatible MIDI files, synthesizers, and SoundFonts.
 
-Load different SF2 files and confirm that Channel 10 lists only the drum kits actually contained in each SoundFont. 
+Experimental cross-channel melodic and percussion reassignment may be explored separately in a future mixer gate.
 
-Select several discovered kits and confirm that playback changes immediately and remains stable. 
+---
 
-Return to DEFAULT AUTO and confirm that the Power → Jazz → Standard fallback still operates normally. 
+## Integrated MIDI/KAR Lyrics Editor
 
-Verify that mute, solo, remote channel cards, lyrics, queue progression, and KAR replacement remain unaffected. 
+The Controller includes an integrated workspace for repairing MIDI/KAR lyrics without manually transferring files between devices.
 
-Known Scope 
+The workflow is:
 
-This gate keeps the established General MIDI percussion convention for Channel 10. Cross-channel melodic/percussion reassignment is not introduced in this release and may be explored separately in a future experimental mixer gate. 
+1. Search for a song in the Controller catalog.
+2. Open the song in the KAR Editor.
+3. Download the authoritative MIDI/KAR file from the Player.
+4. Preserve its song code, filename, and Player information.
+5. Edit lyric text and karaoke markers.
+6. Adjust individual lyric-event timing.
+7. Preview the edited file locally.
+8. Save and reparse the repaired file.
+9. Perform round-trip validation.
+10. Upload the validated replacement to the Player.
 
+Editor capabilities include:
 
+- MIDI/KAR lyric extraction
+- Token-based lyric workspace
+- Text repair
+- Line-break and screen-break markers
+- Per-token timing offsets
+- Local SF2 playback preview
+- Seek and resume-from-token controls
+- Current and next lyric preview
+- Persistent editing workspaces
+- Delayed upload support
+- Round-trip validation
+- Protected Player replacement
 
+---
+
+## Protected KAR Replacement
+
+KaraokeHD does not directly overwrite a Player song without validation.
+
+The replacement process verifies:
+
+- Six-digit catalog code
+- Expected filename
+- Original catalog association
+- Uploaded MIDI/KAR structure
+- Staged-file readability
+- Final committed-file integrity
+
+The Player creates a backup before replacement and retains rollback protection if validation or file commitment fails.
+
+---
+
+## Song Catalog
+
+KaraokeHD uses a local SQLite catalog for fast song searching and remote operation.
+
+Catalog behavior includes:
+
+- Six-digit song codes
+- Filename-derived title and artist display
+- Cursor-paged searching
+- Manual catalog synchronization
+- New-song synchronization
+- Full subfolder rebuild
+- Catalog export
+- Validated catalog import
+- Immediate catalog update after supported uploads
+
+The normal organization workflow is:
+
+1. Analyze
+2. Sync New
+3. Stop and Organize
+4. Restart the Player
+
+---
+
+## Remote Media Features
+
+The Controller can send additional media to the Player.
+
+Current remote media capabilities include:
+
+- MIDI/KAR upload
+- Protected MIDI/KAR replacement
+- Photo upload
+- Background photo management
+- Camera feed as a Player background
+- Rear-camera landscape operation
+- Front-camera preview
+- Background transition selection
+- Remote dimmer control
+
+---
+
+## Current Player Release
+
+### Gate 3.8.19P.2.3
+
+**Dynamic SF2 Drum Kit Inventory**
+
+- Display version: `0.3.8.25.5`
+- Android build: `38275`
+- Target: Android ARM64
+- Framework: `.NET MAUI`
+- Audio engine: `MeltySynth 2.4.1`
+
+### Main Change
+
+Manual Channel 10 assignment now reads all available percussion presets from bank 128 of the active SoundFont.
+
+The previous fixed manual list containing only Power, Jazz, and Standard kits has been removed.
+
+### Preserved Behavior
+
+This gate preserves:
+
+- MIDI/KAR playback
+- Lyric parsing and timing
+- Queue progression
+- Background playback
+- Master EQ
+- Karaoke Mode
+- Channel mute and solo
+- Melodic instrument assignment
+- Remote channel cards
+- SQLite catalog behavior
+- KAR editing and validation
+- Protected remote replacement
+- Backup and rollback protection
+
+---
+
+## Current Controller Release
+
+### Gate 3.8.16N.4.1
+
+**Integrated KAR Editor UI Fix**
+
+- Display version: `0.3.8.20.4`
+- Android build: `38214`
+- Target: Android ARM64
+- Framework: `.NET MAUI`
+
+This Controller build includes the integrated MIDI/KAR Lyrics Editor, persistent workspaces, local playback preview, timing repair, Player download, validated saving, and protected upload back to the Player.
+
+---
+
+## Building the Project
+
+### Requirements
+
+- Windows
+- .NET SDK with Android workload
+- Android SDK
+- Android ARM64 device or compatible test environment
+- A valid SF2 SoundFont
 
