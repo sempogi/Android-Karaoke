@@ -104,6 +104,6 @@ Known Scope
 
 This gate keeps the established General MIDI percussion convention for Channel 10. Cross-channel melodic/percussion reassignment is not introduced in this release and may be explored separately in a future experimental mixer gate. 
 
-Build Note 
 
-The source archive passed package-integrity and static consistency checks. Compile the Android ARM64 Release APK locally using the included build.ps1 script. 
+
+
