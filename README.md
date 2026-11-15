@@ -10,6 +10,7 @@ The project grew from years of experimentation with karaoke systems across VB6, 
 > Functionality, playback reliability, and architectural validation come before cosmetic enhancement.
 
 ---
+INCLUDED..MP3 LRC with AI powered vocal and instrumental splitter. LRC downloader too
 
 ## Download
 
