@@ -191,7 +191,7 @@ KaraokeHD supports MP3 karaoke with:
 
 An available LRC may be downloaded and used directly. If the downloaded or existing LRC is missing, incorrectly timed, too coarse, or contains incorrect words, the AI lyrics workflow can create a replacement Enhanced LRC from the isolated vocal track.
 
-![MP3 Enhanced LRC Playback](docs/images/karaokehd-mp3-lrc.png)
+![MP3 Enhanced LRC Playback](Screenshot_2026-11-18-01-39-11-142_com.functional.mauikaraoke.jpg)
 
 ---
 
