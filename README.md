@@ -528,7 +528,7 @@ Editor capabilities include:
 - Round-trip validation
 - Protected Player replacement
 
-![MIDI KAR Lyrics Editor](docs/images/karaokehd-kar-editor.png)
+![MIDI KAR Lyrics Editor](Screenshot_2026-11-18-01-49-05-468_com.functional.karaokehd.controller.jpg)
 
 ---
 
