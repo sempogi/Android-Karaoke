@@ -459,7 +459,7 @@ When microphone monitoring or scoring capture is active, KaraokeHD can create a 
 
 Processed music and vocal streams may be maintained separately before final mixing. This allows KaraokeHD to produce a cleaner final recording than directly capturing uncontrolled speaker output.
 
-![KaraokeHD Recorder](docs/images/karaokehd-recorder.png)
+![KaraokeHD Recorder](Screenshot_2026-11-18-01-45-38-549_com.functional.mauikaraoke.jpg)
 
 ---
 
