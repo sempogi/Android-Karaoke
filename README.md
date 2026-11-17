@@ -131,7 +131,7 @@ It handles:
 
 ### KaraokeHD Remote
 
-![KaraokeHD Remote](docs/images/karaokehd-remote.png)
+![KaraokeHD Remote](Screenshot_2026-11-18-01-48-52-846_com.functional.karaokehd.controller.jpg)
 
 The separate Remote companion app is not limited to basic playback control. Many of KaraokeHD's advanced companion functions are available through the Remote APK.
 
