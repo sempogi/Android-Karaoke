@@ -102,7 +102,7 @@ The large APK size is caused primarily by KaraokeHD's included offline AI proces
 
 ### KaraokeHD Player
 
-![KaraokeHD Player](docs/images/karaokehd-player.png)
+![KaraokeHD Player](Screenshot_2026-11-18-01-23-16-113_com.functional.mauikaraoke.jpg)
 
 The Player is the main Android karaoke engine.
 
