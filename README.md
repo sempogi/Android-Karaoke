@@ -490,7 +490,7 @@ This allows users to prepare matching videos for particular songs, performers, g
 
 Background videos must be stored inside the designated `background` folder and scanned before they become available.
 
-![Background Video Manager](docs/images/karaokehd-background-manager.png)
+![Background Video Manager](Screenshot_2026-11-18-01-47-33-003_com.functional.mauikaraoke.jpg)
 
 ---
 
