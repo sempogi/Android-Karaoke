@@ -51,7 +51,7 @@ Processing speed depends on the device, song duration, thermal condition, and av
 
 ## Screenshots
 
-![KaraokeHD Features](docs/images/karaokehd-features.png)
+![KaraokeHD Features](https://github.com/sempogi/Android-Karaoke/blob/main/Screenshot_2026-11-18-01-24-16-493_com.functional.mauikaraoke.jpg)
 
 Additional screenshots are stored in:
 
