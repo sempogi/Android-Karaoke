@@ -1,6 +1,6 @@
 # KaraokeHD
 
-![KaraokeHD Player](docs/images/karaokehd-hero.png)
+![KaraokeHD Player](Screenshot_2026-11-14-02-22-22-837_com.functional.mauikaraoke.jpg)
 
 **KaraokeHD is an experimental offline AI-powered Android karaoke platform built with .NET MAUI.**
 
