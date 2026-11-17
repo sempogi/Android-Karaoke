@@ -570,7 +570,7 @@ MusicXML capabilities include:
 
 This allows the Remote to operate as more than a karaoke controller. It can also act as a portable music-score viewer and playback tool.
 
-![MusicXML Score View](docs/images/karaokehd-musicxml.png)
+![MusicXML Score View](Screenshot_2026-11-18-01-52-27-212_com.functional.karaokehd.controller.jpg)
 
 ---
 
