@@ -228,7 +228,7 @@ Generated or downloaded lyrics may still require review because transcription ac
 
 KaraokeHD provides editing assistance for correcting generated or downloaded lyrics.
 
-![Offline AI Karaoke Tools](docs/images/karaokehd-ai-tools.png)
+![Offline AI Karaoke Tools](Screenshot_2026-11-18-01-23-05-062_com.functional.mauikaraoke.jpg)
 
 ---
 
@@ -309,7 +309,7 @@ Mixer functions include:
 
 Manual instrument assignments may remain authoritative instead of being immediately replaced by later automatic program events.
 
-![Multi-SF2 Channel Mixer](docs/images/karaokehd-multisf2.png)
+![Multi-SF2 Channel Mixer](Screenshot_2026-11-18-01-42-43-965_com.functional.mauikaraoke.jpg)
 
 ---
 
